@@ -772,9 +772,10 @@ GS::ObjectState GetStoriesCommand::Execute (const GS::ObjectState& /*parameters*
         storyData.Add ("floorId", story.floorId);
         storyData.Add ("dispOnSections", story.dispOnSections);
         storyData.Add ("level", story.level);
-        if (i + 1 < storyCount) {
-            storyData.Add ("height", (*storyInfo.data)[i + 1].level - story.level);
-        }
+        // The array holds one record more than there are stories: the virtual story
+        // above the top one, whose level is where the top story ends. Every story has a
+        // next level, so every story has a height, the top one included.
+        storyData.Add ("height", (*storyInfo.data)[i + 1].level - story.level);
         storyData.Add ("name", uName);
 
         listAdder (storyData);

@@ -6954,7 +6954,7 @@
             },
             "height": {
                 "type": "number",
-                "description": "Story height, calculated as the level of the story above minus this story's level. Omitted for the topmost story, which has no story above."
+                "description": "Story height, calculated as the level of the story above minus this story's level. The topmost story gets its height from the virtual story above it that Archicad keeps in the story settings."
             },
             "name": {
                 "type": "string",
@@ -6967,6 +6967,7 @@
             "floorId",
             "dispOnSections",
             "level",
+            "height",
             "name"
         ]
     },
